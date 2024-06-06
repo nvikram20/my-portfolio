@@ -1,0 +1,143 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(224,195,252,1) 0%, rgba(206,181,255,1) 35%, rgba(188,209,255,1) 100%);
+    color: #fff;
+}
+
+.projects-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    min-height: calc(100vh - 60px); 
+    text-align: center;
+}
+
+.projects-content {
+    max-width: 800px; /* Ensure content width matches navbar max width */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    border: 2px solid transparent; /* Ensure border size matches navbar border */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-around; /* Ensure cards are spaced out evenly */
+    flex-wrap: wrap;
+    gap: 10px; /* Decrease gap between cards */
+    width: 100%;
+    padding: 20px 0; /* Adjust padding inside the border */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.project-card {
+    perspective: 1000px;
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Slight scale on hover */
+    box-shadow: transparent; /* Subtle shadow on hover */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+    border-radius: 15px;
+    background: transparent;
+}
+
+.project-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black; /* Constant black border for both front and back */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow to enhance the card's look */
+}
+
+.card-front {
+    background: transparent;
+    color: #333;
+}
+
+.card-front.hide-background {
+    background: transparent; /* Remove background when card is flipped */
+}
+
+.card-back {
+    background: transparent; /* Ensure card-back is transparent */
+    color: black;
+    transform: rotateY(180deg);
+    z-index: 1; /* Ensure it stays above the card front */
+}
+
+
+
+.button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: transparent;
+    border-width: 0;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-flex;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s, border 0.3s ease-in-out; /* Add border transition */
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform, border;
+    font-size: 18px;
+}
+
+.button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, transparent 0 -3px 0 inset; 
+    transform: translateY(-2px);
+    border: 1px solid black; /* Add border on hover */
+}
+
+.button-30:active {
+    box-shadow: rgba(45, 35, 66, 0) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, transparent 0 -3px 0 inset;
+    transform: translateY(2px);
+}
+p {
+    font-size: 14px;
+    line-height: 1.4; /* Improve readability */
+}

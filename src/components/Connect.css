@@ -1,0 +1,22 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    background: rgb(224,195,252);
+    background: linear-gradient(90deg, rgba(224,195,252,1) 0%, rgba(206,181,255,1) 35%, rgba(188,209,255,1) 100%);
+    color: #fff;
+}
+
+.connect-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 1rem 0;
+    min-height: calc(100vh - 60px); 
+    text-align: center;
+}
