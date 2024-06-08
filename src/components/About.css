@@ -1,4 +1,5 @@
-/* About Styles */
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
 .about-container {
     background-color: transparent !important;
     color: #333;
@@ -10,6 +11,75 @@
     border: 2px solid #000;
 }
 
+.lotte-container {
+    margin-bottom: 20px;
+}
+
+.name-animation-container {
+    display: flex;
+
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 2.26rem;
+    color: #333;
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.animation {
+    height: 2.26rem;
+    overflow: hidden;
+   
+    /* margin-left: 1rem; */
+}
+
+.first, .second, .third {
+    font-size: 18px !important;
+}
+
+.animation > div > div {
+    padding: 0.25rem 0.75rem;
+    height: 2.26rem;
+    margin-bottom: 2.26rem;
+    display: inline-block;
+    font-size: 19px;
+}
+
+.animation div:first-child {
+    animation: text-animation 9s infinite;
+}
+
+.first {
+    padding-top: 5px !important ; /* Align with "Hello 👋 I'm" */
+}
+
+.second div {
+    background-color: transparent; /* No background color */
+    color: #333; /* Text color */
+}
+
+.third div {
+    background-color: transparent; /* No background color */
+    color: #333; /* Text color */
+}
+
+@keyframes text-animation {
+    0% { margin-top: 0; }
+    10% { margin-top: 0; }
+    20% { margin-top: -2.26rem; }
+    30% { margin-top: -2.26rem; }
+    40% { margin-top: -4.52rem; }
+    50% { margin-top: -4.52rem; }
+    60% { margin-top: -2.26rem; }
+    70% { margin-top: -2.26rem; }
+    80% { margin-top: 0; }
+    90% { margin-top: 0; }
+    100% { margin-top: 0; }
+}
+
 .about-container h1 {
     font-size: 2rem;
     margin-bottom: 10px;
@@ -19,16 +89,17 @@
     font-size: 1rem;
 }
 
-.about-container .typed {
+.about-container .typed-effect {
     font-size: 1.5rem;
     color: #ff4081;
 }
 
 .about-container p {
-    font-size: 1.2rem;
+    font-size: 18px;
     line-height: 1.8;
     max-width: 650px;
-    margin-top: 20px;
+    margin-top: 5px;
+    margin-right: 0px;
 }
 
 .button-container {

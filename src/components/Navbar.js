@@ -1,15 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import {ReactTyped} from "react-typed";
 import "./Navbar.css";
 
 const Navbar = () => {
   return (
     <div className="navbar-container">
       <nav className="navbar">
-        <Link to="/" className="navbar-logo">
-          LOGO
-        </Link>
+        <div className="navbar-logo">
+          <ReactTyped
+            strings={["NV", "Niharika Vikram"]}
+            typeSpeed={40}
+            backSpeed={50}
+            loop
+          />
+        </div>
         <ul className="navbar-menu">
           {[
             { name: "Home", to: "/" },
