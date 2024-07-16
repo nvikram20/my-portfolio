@@ -1,6 +1,5 @@
 import React, { useCallback, useRef, useState, useEffect } from 'react';
 import Navbar from './Navbar';
-import Footer from './Footer';
 import About from './About';
  // Ensure this import is correct
 import './Home.css';

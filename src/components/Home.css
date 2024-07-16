@@ -5,9 +5,8 @@ body, html {
     overflow-x: hidden; /* Prevent horizontal scroll */
     font-family: 'Poppins', sans-serif;
     height: 100%;
-    background: rgb(224,195,252);
-    background: linear-gradient(90deg, rgba(224,195,252,1) 0%, rgba(206,181,255,1) 35%, rgba(188,209,255,1) 100%);
-    color: #fff;
+    background-color: #FFFFFF; /* Set background to white */
+    color: #333; /* Adjusted to dark color for better readability against light background */
 }
 
 .home-container {
@@ -21,7 +20,6 @@ body, html {
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     padding: 1rem 0;
     min-height: calc(100vh - 60px); 
@@ -33,7 +31,7 @@ body, html {
     z-index: 1; /* Ensure About content is above particles */
     margin: 20px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: white;
     color: #333;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
