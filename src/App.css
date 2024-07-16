@@ -4,10 +4,114 @@ body, html {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   height: 100%;
-  background: rgb(224,195,252);
-  background: linear-gradient(90deg, rgba(224,195,252,1) 0%, rgba(206,181,255,1) 35%, rgba(188,209,255,1) 100%);
-  color: #fff;
+  background-color: #FFFFFF; /* Set background to white */
+  color: #333; /* Adjusted to dark color for better readability against light background */
+  overflow: hidden; /* Ensure particles don't create scrollbars */
 }
+
 #content {
   flex: 1; /* Ensures the content area takes up remaining vertical space */
+}
+
+.social-icons {
+  position: fixed;
+  right: 20px; /* Position 20px from the right edge */
+  top: 50%; /* Vertically center the icons */
+  transform: translateY(-50%); /* Adjust for exact centering */
+  display: flex;
+  flex-direction: column; /* Stack icons vertically */
+  gap: 15px; /* Space between icons */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.social-icons a {
+  color: #333; /* Adjusted to dark color for better readability */
+  font-size: 24px;
+  transition: transform 0.2s ease-in-out, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #0077b5; /* Example color change on hover */
+  transform: scale(1.5); /* Enlarge the icon */
+}
+
+.social-icons a:not(:hover) {
+  transform: scale(1); /* Reset to original size */
+}
+
+.social-icons a:hover ~ a {
+  transform: scale(1.2); /* Slightly enlarge the adjacent icon */
+}
+
+.social-icons a ~ a:hover {
+  transform: scale(1.2); /* Slightly enlarge the adjacent icon */
+}
+
+.circle {
+  width: 15px; /* Smaller size */
+  height: 15px; /* Smaller size */
+  border: 2px solid rgba(0, 0, 0, 0.8); /* Black color */
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    width: 90%;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-menu.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #131417;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-item {
+    padding: 10px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .social-icons {
+    top: auto;
+    bottom: 20px;
+    right: 10px;
+    flex-direction: row;
+  }
+
+  .social-icons a {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-menu.open {
+    top: 50px;
+  }
+
+  .social-icons {
+    bottom: 10px;
+    right: 5px;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
 }

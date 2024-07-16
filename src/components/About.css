@@ -17,7 +17,6 @@
 
 .name-animation-container {
     display: flex;
-
     justify-content: center;
     margin-bottom: 20px;
 }
@@ -32,8 +31,6 @@
 .animation {
     height: 2.26rem;
     overflow: hidden;
-   
-    /* margin-left: 1rem; */
 }
 
 .first, .second, .third {
@@ -49,11 +46,11 @@
 }
 
 .animation div:first-child {
-    animation: text-animation 9s infinite;
+    animation: text-animation 5s infinite;
 }
 
 .first {
-    padding-top: 5px !important ; /* Align with "Hello 👋 I'm" */
+    padding-top: 6px !important ; /* Align with "Hello 👋 I'm" */
 }
 
 .second div {

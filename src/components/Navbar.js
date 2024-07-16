@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {ReactTyped} from "react-typed";
+import { ReactTyped } from "react-typed";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -9,16 +9,17 @@ const Navbar = () => {
     <div className="navbar-container">
       <nav className="navbar">
         <div className="navbar-logo">
-          <ReactTyped
-            strings={["NV", "Niharika Vikram"]}
-            typeSpeed={40}
-            backSpeed={50}
-            loop
-          />
+          <Link to="/" className="navbar-logo-link">
+            <ReactTyped
+              strings={["NV", "Niharika Vikram"]}
+              typeSpeed={40}
+              backSpeed={50}
+              loop
+            />
+          </Link>
         </div>
         <ul className="navbar-menu">
           {[
-            { name: "Home", to: "/" },
             { name: "Projects", to: "/projects" },
             { name: "Resume", to: "/resume" },
             { name: "Let's Connect", to: "/connect" },

@@ -11,6 +11,10 @@ const About = () => {
         navigate('/resume');
     };
 
+    const handleGetCvClick = () => {
+        window.open('https://drive.google.com/file/d/1jxRWjscAsOdLHKdH1mb5WVzeVzYWEglf/view', '_blank');
+    };
+
     return (
         <div className="about-container">
             <div className='lotte-container'>
@@ -28,19 +32,14 @@ const About = () => {
                 <p className="intro-text">Hello 👋 I'm</p>
                 <section className="animation">
                     <div className="first"><div>Niharika Vikram</div></div>
-                    <div className="second"><div>Web Developer</div></div>
-                    <div className="third"><div>Systems Engineer</div></div>
+                    <div className="second"><div>a Software Engineer</div></div>
+                    <div className="third"><div>a Systems Engineer</div></div>
                 </section>
             </div>
-            {/* <div className="typed-effect">
-                <p>Debugging my way through life.</p>
-                <p>O(1) solutions, O(n) coffee.</p>
-                <p>Coding my way to glory.</p>
-            </div> */}
             <p>Welcome to my portfolio. Let's build something amazing together!</p>
             <div className="button-container">
                 <button className="about-button" onClick={handleAboutMeClick}>About me</button>
-                <button className="about-button">Get my CV</button>
+                <button className="about-button" onClick={handleGetCvClick}>Get my CV</button>
             </div>
         </div>
     );
