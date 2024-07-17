@@ -22,11 +22,11 @@ const Navbar = () => {
         <div className="navbar-right">
           <ul className="navbar-menu">
             {[
-              { name: "About", to: "/about" },
+              { name: "Home", to: "/" },
               { name: "Education", to: "/education" },
               { name: "Work", to: "/work" },
               { name: "Projects", to: "/projects" },
-              { name: "Contact", to: "/contact" },
+              { name: "Connect", to: "/connect" },
             ].map((item, index) => (
               <motion.li
                 className="navbar-item"

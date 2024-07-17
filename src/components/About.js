@@ -1,48 +1,31 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import animationData from '../animations/anime.json';
-import Lottie from 'react-lottie';
 import './About.css';
+import profilePhoto from './profile.jpg'; // Adjust the path according to your directory structure
 
 const About = () => {
-    const navigate = useNavigate();
+  const handleGetResumeClick = () => {
+    window.open('https://drive.google.com/file/d/1jxRWjscAsOdLHKdH1mb5WVzeVzYWEglf/view', '_blank');
+  };
 
-    const handleAboutMeClick = () => {
-        navigate('/resume');
-    };
-
-    const handleGetCvClick = () => {
-        window.open('https://drive.google.com/file/d/1jxRWjscAsOdLHKdH1mb5WVzeVzYWEglf/view', '_blank');
-    };
-
-    return (
-        <div className="about-container">
-            <div className='lotte-container'>
-                <Lottie
-                    options={{
-                        loop: true,
-                        autoplay: true,
-                        animationData: animationData,
-                    }}
-                    height={200}
-                    width={200}
-                />
-            </div>
-            <div className="name-animation-container">
-                <p className="intro-text">Hello 👋 I'm</p>
-                <section className="animation">
-                    <div className="first"><div>Niharika Vikram</div></div>
-                    <div className="second"><div>a Software Engineer</div></div>
-                    <div className="third"><div>a Systems Engineer</div></div>
-                </section>
-            </div>
-            <p>Welcome to my portfolio. Let's build something amazing together!</p>
-            <div className="button-container">
-                <button className="about-button" onClick={handleAboutMeClick}>About me</button>
-                <button className="about-button" onClick={handleGetCvClick}>Get my CV</button>
-            </div>
+  return (
+    <div className="about-container">
+      <div className="about-content">
+        <div className="about-photo">
+          <img src={profilePhoto} alt="Niharika Vikram" className="profile-photo" />
         </div>
-    );
+        <div className="about-text">
+          <p className="about-paragraph">
+            Hey! 👋 I’m <span className="highlight-name">Niharika Vikram</span>, a Software Engineer who turns caffeine ☕ into code 💻 and ideas into reality 🌟. 
+            With 3+ years of experience in full-stack development, I’ve built everything from edtech platforms 📚 to real-time stock interfaces 📈 
+            using my trusty sidekicks <span className="highlight-tech">Java</span>, <span className="highlight-tech">Python</span>, and <span className="highlight-tech">ReactJS</span>. 
+            I believe in making technology work for people, not the other way around. 
+            When I’m not debugging 🐛, I’m probably hiking 🥾, reading 📖, or experimenting with new recipes 🍳. Let’s create something awesome together! 🚀
+          </p>
+          <button className="resume-button" onClick={handleGetResumeClick}>Get My Resume</button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default About;
