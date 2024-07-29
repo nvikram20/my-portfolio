@@ -1,0 +1,151 @@
+#contact {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .connect-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    color: #333;
+    padding: 2rem; /* Adjusted padding */
+    flex-direction: row; /* Ensure the headline and form are side by side */
+  }
+  
+  .connect-headline {
+    flex: 1; /* Allow the headline to take up space */
+    font-size: 1.5rem; /* Adjusted font size */
+    font-weight: 700;
+    text-align: left;
+    margin-right: 2rem; /* Space between headline and form */
+  }
+  
+  .connect-headline h2 {
+    font-size: 2rem; /* Headline size */
+    margin-bottom: 1rem;
+  }
+  
+  .connect-headline p {
+    font-size: 1rem; /* Description size */
+    color: #666; /* Gray color for description */
+  }
+  
+  .form-wrapper {
+    flex: 1; /* Allow the form to take up space */
+    max-width: 400px; /* Fixed max-width */
+    background-color: #f9f9f9; /* Light background for form wrapper */
+    padding: 2rem; /* Adjusted padding */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #333;
+  }
+  
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 0.75rem; /* Adjusted padding */
+    margin-bottom: 1rem; /* Adjusted margin */
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    color: #333;
+    transition: border-color 0.3s;
+    box-sizing: border-box; /* Ensure padding is included in width */
+  }
+  
+  .form-input:focus,
+  .form-textarea:focus {
+    border-color: #0077b5;
+    outline: none;
+  }
+  
+  .form-textarea {
+    resize: vertical;
+    height: 150px; /* Adjusted height */
+  }
+  
+  .form-button {
+    padding: 0.75rem; /* Adjusted padding */
+     /* Changed button color to green */
+    color:#4CAF50; 
+    border: #4CAF50 solid 1px;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: capitalize !important;
+    width: 100%; /* Make button full width */
+    box-sizing: border-box; /* Ensure padding is included in width */
+  }
+  
+  .form-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    color : white;
+  }
+  
+  .form-error {
+    font-size: 0.75rem;
+    color: red;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Night Mode Styles */
+  .night-mode .connect-section {
+    background-color: #121212;
+    color: #ddd;
+  }
+  
+  .night-mode .form-wrapper {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  }
+  
+  .night-mode .form-label {
+    color: #bbb;
+  }
+  
+  .night-mode .form-input,
+  .night-mode .form-textarea {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #ddd;
+  }
+  
+  .night-mode .form-input:focus,
+  .night-mode .form-textarea:focus {
+    border-color: #66b2ff;
+  }
+  
+  .night-mode .form-button {
+    /* background-color: #4CAF50; Green button for night mode */
+    color:#4CAF50 ;
+    border: #4CAF50 solid 1px;
+    background-color: black;
+
+  }
+  
+  .night-mode .form-button:hover {
+
+    background-color: #45a049; /* Darker green on hover */
+    color : white;
+  }
+  
+  .night-mode .form-error {
+    color: #ff6666;
+  }
+  

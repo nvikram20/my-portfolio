@@ -1,123 +1,149 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%; /* Ensures the body takes full height */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  font-family: 'Poppins', sans-serif;
+  background-color: #FFFFFF; /* Set background to white */
+  color: #333; /* Adjusted to dark color for better readability against light background */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for night mode */
+}
+
+.night-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.navbar {
+  height: 80px; /* Adjust the height of the navbar as needed */
+}
+
 .about-container {
-    background-color: transparent !important;
-    color: #333;
-    padding: 20px;
-    text-align: center;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #000;
+  background-color: transparent !important;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure it occupies full height of viewport */
+  margin: 0; /* Ensure no margin */
+  padding: 0; /* Ensure no padding */
 }
 
-.lotte-container {
-    margin-bottom: 20px;
+.about-content {
+  display: flex;
+  align-items: center;
+  padding: 20px; /* Add padding for some space around the content */
+  background-color: white;
+  color: #333;
+  border-radius: 10px;
+  justify-content: center;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Subtle shadow for a card effect */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for night mode */
 }
 
-.name-animation-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+.night-mode .about-content {
+  background-color: transparent; /* Remove background color for night mode */
 }
 
-.intro-text {
-    font-size: 2.26rem;
-    color: #333;
-    display: inline-block;
-    margin-right: 1rem;
+.about-photo {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the photo and details horizontally */
+  margin-right: 5%; /* Space between photo and text */
 }
 
-.animation {
-    height: 2.26rem;
-    overflow: hidden;
+.profile-photo {
+  width: 60%; /* Make the photo smaller */
+  border-radius: 50%; /* Circular photo */
+  border: 2px solid #333; /* Thin border */
+  margin-bottom: 20px; /* Space between photo and details */
 }
 
-.first, .second, .third {
-    font-size: 18px !important;
+.about-details {
+  text-align: center;
+  margin-bottom: 20px; /* Space between photo and details */
 }
 
-.animation > div > div {
-    padding: 0.25rem 0.75rem;
-    height: 2.26rem;
-    margin-bottom: 2.26rem;
-    display: inline-block;
-    font-size: 19px;
+.about-details p {
+  margin: 5px 0; /* Space between each detail */
 }
 
-.animation div:first-child {
-    animation: text-animation 5s infinite;
+.about-text {
+  width: 35%; /* Decrease width for a narrower text area */
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: center; /* Left-align the text */
+  padding-right: 20px; /* Adjust padding as needed */
 }
 
-.first {
-    padding-top: 6px !important ; /* Align with "Hello 👋 I'm" */
+.about-paragraph {
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #ddd; /* Subtle border for better visual structure */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for night mode */
+  line-height: 30px;
 }
 
-.second div {
-    background-color: transparent; /* No background color */
-    color: #333; /* Text color */
+.resume-button {
+  display: block;
+  margin: 20px auto 0 auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  color:white ;
+  /* border: 1px solid #4CAF50; */
+  background-color: #4CAF50; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.third div {
-    background-color: transparent; /* No background color */
-    color: #333; /* Text color */
+.resume-button:hover {
+  background-color: #45a049; /* Darker green on hover */
 }
 
-@keyframes text-animation {
-    0% { margin-top: 0; }
-    10% { margin-top: 0; }
-    20% { margin-top: -2.26rem; }
-    30% { margin-top: -2.26rem; }
-    40% { margin-top: -4.52rem; }
-    50% { margin-top: -4.52rem; }
-    60% { margin-top: -2.26rem; }
-    70% { margin-top: -2.26rem; }
-    80% { margin-top: 0; }
-    90% { margin-top: 0; }
-    100% { margin-top: 0; }
+.highlight-name {
+  color: #4CAF50; /* Highlight color for name */
+  font-weight: bold;
 }
 
-.about-container h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+.highlight-tech {
+  color: #FF5722; /* Highlight color for technology names */
+  font-weight: bold;
 }
 
-.about-container p {
-    font-size: 1rem;
+.night-mode .about-text, .night-mode .about-container {
+  color: #ffffff; /* Light text color for night mode */
 }
 
-.about-container .typed-effect {
-    font-size: 1.5rem;
-    color: #ff4081;
+.night-mode .about-photo img {
+  border: 2px solid #ffffff; /* White border around photo in night mode */
 }
 
-.about-container p {
-    font-size: 18px;
-    line-height: 1.8;
-    max-width: 650px;
-    margin-top: 5px;
-    margin-right: 0px;
+.night-mode .about-paragraph {
+  background: #333;
+  border: 1px solid #444;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Adjusted shadow for night mode */
 }
 
-.button-container {
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
+.night-mode .resume-button {
+  background-color: #76FF03; /* Light green for night mode */
 }
 
-.about-button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    background-color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.night-mode .resume-button:hover {
+  background-color: #64DD17; /* Darker green for night mode on hover */
 }
 
-.about-button:hover {
-    background-color: #444;
+.night-mode .highlight-name {
+  color: #76FF03; /* Highlight color for name in night mode */
+}
+
+.night-mode .highlight-tech {
+  color: #FFAB40; /* Highlight color for technology names in night mode */
 }

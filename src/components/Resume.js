@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Accordion, AccordionSummary, AccordionDetails, Typography, Divider } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Navbar from './Navbar';
 import './Resume.css';
 
 const Resume = () => {
@@ -13,7 +12,7 @@ const Resume = () => {
 
   return (
     <div className="resume-page">
-      <Navbar />
+
       <div className="resume-info-section">
       <div className="info-section">
         <Typography variant="h4" className="info-title">A Little About Me </Typography>

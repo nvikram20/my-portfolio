@@ -1,51 +1,62 @@
-import React, { useCallback, useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Navbar from './Navbar';
 import About from './About';
- // Ensure this import is correct
+import Experience from './Experience';
+import Projects from './Projects';
+import Contact from './Contact';
 import './Home.css';
 
 const Home = () => {
-    const [animateEducation, setAnimateEducation] = useState(false);
+  const homeRef = useRef(null);
+  const experienceRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
-    const aboutRef = useRef(null);
-    const educationRef = useRef(null);
+  const scrollToSection = (sectionRef) => {
+    sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
-    const handleScrollToSection = (section) => {
-        if (section === 'about' && aboutRef.current) {
-            aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-        } else if (section === 'education' && educationRef.current) {
-            setAnimateEducation(true);
-            educationRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const items = document.querySelectorAll('.roadmap-item');
-            items.forEach((item) => {
-                const rect = item.getBoundingClientRect();
-                if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                    item.classList.add('fade-in');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    return (
-        <div className="home-container">
-            <div className="about-section" ref={aboutRef}>
-            <Navbar />
-
-                <About />
-            </div>
-            {/* <Footer /> */}
-        </div>
+  useEffect(() => {
+    const sections = document.querySelectorAll('.timeline-item');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+          }
+        });
+      },
+      { threshold: 0.1 }
     );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+
+  return (
+    <div className="home-container">
+      <Navbar scrollToSection={scrollToSection} refs={{ homeRef, experienceRef, projectsRef, contactRef }} />
+      <div className="section" id="home" ref={homeRef}>
+        <About />
+      </div>
+      <div className="section" id="experience" ref={experienceRef}>
+        <Experience />
+      </div>
+      <div className="section" id="projects" ref={projectsRef}>
+        <Projects />
+      </div>
+      <div className="section" id="contact" ref={contactRef}>
+        <Contact />
+      </div>
+    </div>
+  );
 };
 
 export default Home;
