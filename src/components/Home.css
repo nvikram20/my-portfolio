@@ -1,3 +1,13 @@
+/* Add fade-in animation */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
 body, html {
     margin: 0;
     padding: 0;
@@ -7,43 +17,32 @@ body, html {
     height: 100%;
     background-color: #FFFFFF; /* Set background to white */
     color: #333; /* Adjusted to dark color for better readability against light background */
-}
-
-.home-container {
+  }
+  
+  .home-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    position: relative;
-}
-
-.about-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* padding: 1rem 0; */
-    min-height: calc(100vh - 60px); 
-    text-align: center;
-}
-
-.about-container {
-    position: relative;
-    z-index: 1; /* Ensure About content is above particles */
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
-    color: #333;
-    border-radius: 10px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-}
-
-.footer {
-    padding: 20px;
-    background: #2c3e50;
-    text-align: center;
-    color: #fff;
-}
-
-.education-section {
-    padding: 60px 20px; /* Ensure space between navbar and education section */
-}
+    width: 100%;
+  }
+  
+  .section {
+    /* padding: 60px 20px; Adjusted padding to reduce gap */
+    /* min-height: 100vh; Ensure each section occupies full viewport height */
+    margin: 0; /* Ensure no extra margin */
+    opacity: 0; /* Start with opacity 0 */
+    animation: fadeIn 1s ease-in forwards; /* Fade-in animation */
+  }
+  
+  .section-visible {
+    opacity: 1; /* Make section fully visible */
+  }
+  .section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .section p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  

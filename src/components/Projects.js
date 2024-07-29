@@ -1,80 +1,66 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from './Navbar';
+import React from 'react';
 import './Projects.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import projectImage1 from '../Assets/Project1.jpg'; // Ensure this path is correct
+import projectImage2 from '../Assets/Project2.jpg'; // Placeholder image for the new project
+import projectImage3 from '../Assets/Project3.jpg'; // Placeholder image for the new project
+import projectImage4 from '../Assets/Project4.png'; // Placeholder image for the new project
+
+const projects = [
+  {
+    title: 'Topic Based Empathetic Chatbot (NLP)',
+    skills: ['Python', 'TensorFlow', 'Scikit-Learn', 'NLTK', 'Flask', 'BERT', 'BLEU'],
+    imageUrl: projectImage1,
+    projectUrl: 'https://github.com/nvikram20/Chatbot',
+    icon: faGithub
+  },
+  {
+    title: 'Feedback Summarizer',
+    skills: ['Python', 'AWS S3', 'AWS Lambda', 'AWS Transcribe', 'AWS Bedrock', 'Anthropic Claude', 'Jinja2'],
+    imageUrl: projectImage2,
+    projectUrl: 'https://github.com/nvikram20/Feedback-Summarizer',
+    icon: faGithub
+  },
+  {
+    title: 'Advanced RL Algorithms on Atari Environments',
+    skills: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI Gym', 'NumPy', 'Matplotlib'],
+    imageUrl: projectImage3,
+    projectUrl: 'https://drive.google.com/file/d/1leRXI-rLxTijGBxkiTSV-C_wuMWxRByP/view',
+    icon: faLink
+  },
+  {
+    title: 'Amazon Clone',
+    skills: ['React JS', 'Redux', 'Firebase', 'Stripe'],
+    imageUrl: projectImage4,
+    projectUrl: 'https://react-project-834ef.web.app/',
+    icon: faLink
+  }
+  // Add more projects as needed
+];
 
 const Projects = () => {
-  const [flipped, setFlipped] = useState([false, false, false]); // Adjusted for three projects
-
-  useEffect(() => {
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach((card, index) => {
-      setTimeout(() => {
-        card.classList.add('visible');
-      }, index * 200); // delay each card by 200ms
-    });
-  }, []);
-
-  const handleFlip = (index) => {
-    setFlipped(flipped.map((flip, i) => (i === index ? !flip : flip)));
-  };
-
-  const projects = [
-    {
-      title: 'Topic Based Empathetic Chatbot',
-      description: 'Built an end-to-end empathetic chatbot, incorporating complex NLP techniques to ensure contextually relevant and emotionally intelligent interactions. Meticulous model fine-tuning and data training significantly uplifted key metrics like BERT and BLEU scores. The final product was a sophisticated chatbot capable of understanding and engaging in empathetic conversations.',
-      techStack: 'Python, TensorFlow, GPT-2, BERT, BLEU, BLEURT, Git',
-      link: 'https://github.com/nvikram20/Chatbot'
-    },
-    {
-      title: 'Amazon Clone',
-      description: 'Developed an Amazon Clone Web Application, featuring full-stack e-commerce functionality with user authentication, real-time database interactions, and efficient image management. The project includes secure payment processing, error handling, and is optimized for global accessibility and scalability.',
-      techStack: 'ReactJS, HTML, CSS, Redux, Firebase, Stripe API, Firebase Hosting with CDN optimization',
-      link: 'https://react-project-834ef.web.app/' // Provide the correct GitHub link here
-    },
-  ];
-
   return (
     <div className="projects-container">
-      <Navbar />
-      <div className="projects-content">
-        <div className="cards-container">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className={`project-card ${flipped[index] ? 'flipped' : ''}`}
-              onClick={() => handleFlip(index)}
-            >
-              <div className="card-inner">
-                <div className={`card-front ${flipped[index] ? 'hide-background' : ''}`}>
-                  <h3>{project.title}</h3>
-                  <h5>Tech Stack: {project.techStack}</h5>
-                  <button
-                    className="button-30"
-                    onClick={(e) => {
-                      e.stopPropagation(); // Prevent the card flip
-                      handleFlip(index);
-                    }}
-                  >
-                    Read More
-                  </button>
-                </div>
-                <div className="card-back">
-                  <p>{project.description}</p>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="button-30"
-                    onClick={(e) => e.stopPropagation()} // Prevent the card flip
-                  >
-                    View Project
-                  </a>
-                </div>
-              </div>
+      {projects.map((project, index) => (
+        <div className="project-card" key={index}>
+          <div className="project-link">
+            <a href={project.projectUrl} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={project.icon} />
+            </a>
+          </div>
+          <img src={project.imageUrl} alt={project.title} className="project-image" />
+          <div className="project-content">
+            <div className="project-title">{project.title}</div>
+            <div className="project-skills">
+              {project.skills.map((skill, skillIndex) => (
+                <div key={skillIndex} className="skill">{skill}</div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };

@@ -14,19 +14,27 @@ body, html {
 
 .navbar-container {
   display: flex;
+  flex-direction: column; /* Added to stack the scroll-to-top button */
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 10px 0 ; /* Removed padding to decrease space above and below the navbar */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure navbar stays above other content */
+  background-color: white; /* Ensure background color is set */
+}
+
+.night-mode .navbar-container {
+  background-color: #121212; /* Background color for night mode */
 }
 
 .navbar {
+  height: 60px !important; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%; /* Adjust width as needed */
+  width: 90%; /* Adjust width as needed */
   padding: 5px 0; /* Reduced padding to decrease space inside the navbar */
-  background-color: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -38,11 +46,12 @@ body, html {
 
 .navbar-logo-link {
   font-family: 'Newsreader', serif;
-  font-size: 24px; /* Decreased font size */
-  color: green; /* Adjust color as needed */
+  font-size: 24px;
+  color: green;
   text-decoration: none;
-  margin-left: 0; /* Remove any left margin */
-  padding-left: 0; /* Remove any left padding */
+  margin-left: 0;
+  padding-left: 0;
+  cursor: pointer;
 }
 
 .navbar-right {
@@ -53,35 +62,108 @@ body, html {
 .navbar-menu {
   list-style: none;
   display: flex;
-  gap: 15px; /* Adjust gap as needed */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  gap: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-item {
   position: relative;
-  padding: 5px; /* Reduced padding for smaller links */
+  padding: 5px;
   cursor: pointer;
 }
 
 .nav-link {
   text-decoration: none;
   color: black;
-  font-size: 16px; /* Decreased font size */
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .night-mode .nav-link {
-  color: #ffffff; /* White color for links in night mode */
+  color: #ffffff;
 }
 
-/* Night mode toggle */
-.night-mode-toggle {
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-label {
+  position: absolute;
   cursor: pointer;
-  font-size: 24px;
-  margin-left: 10px; /* Reduced margin to minimize space */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
 }
 
-/* Remove hover effects */
-.underline {
-  display: none; /* Hide the underline */
+.toggle-label:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-label {
+  background-color: #2196F3;
+}
+
+input:checked + .toggle-label:before {
+  transform: translateX(24px);
+}
+
+.night-mode .toggle-label {
+  background-color: #66b2ff;
+}
+
+.night-mode .toggle-label:before {
+  background-color: #fff;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #0077b5;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.scroll-to-top:hover {
+  background-color: #005f87;
+  transform: translateY(-5px);
+}
+
+.night-mode .scroll-to-top {
+  background-color: #66b2ff;
+}
+
+.night-mode .scroll-to-top:hover {
+  background-color: #5599e6;
 }

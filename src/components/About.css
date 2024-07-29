@@ -27,7 +27,9 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 100vh; /* Ensure it occupies full height of viewport */
+  margin: 0; /* Ensure no margin */
+  padding: 0; /* Ensure no padding */
 }
 
 .about-content {
@@ -41,9 +43,11 @@ body, html {
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Subtle shadow for a card effect */
   transition: background-color 0.3s, color 0.3s; /* Smooth transition for night mode */
 }
+
 .night-mode .about-content {
-    background-color: transparent; /* Remove background color for night mode */
-  }
+  background-color: transparent; /* Remove background color for night mode */
+}
+
 .about-photo {
   width: 30%;
   display: flex;
@@ -91,8 +95,9 @@ body, html {
   margin: 20px auto 0 auto;
   padding: 10px 20px;
   font-size: 16px;
-  color: #fff;
-  background-color: #4CAF50; /* Green background */
+  color:white ;
+  /* border: 1px solid #4CAF50; */
+  background-color: #4CAF50; 
   border: none;
   border-radius: 5px;
   cursor: pointer;

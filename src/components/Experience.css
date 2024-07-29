@@ -1,0 +1,247 @@
+.experience-container {
+  padding: 5rem;
+  background: transparent;
+}
+
+h2.experience-title, h2.education-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.experience-title, .education-title {
+  flex: 1;
+}
+
+.education-title {
+  text-align: left;
+}
+
+.experience-grid {
+  display: flex;
+  gap: 2rem;
+}
+
+.experience-column, .education-column {
+  flex: 1;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards, slideIn 0.5s ease-in-out forwards;
+}
+
+.timeline-dot {
+  width: 15px;
+  height: 15px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: 1;
+}
+
+.experience-column .timeline-dot {
+  left: -8px; /* Adjusted position for experience section */
+}
+
+.education-column .timeline-dot {
+  left: -8px; /* Adjusted position for education section */
+}
+
+.card {
+  background: linear-gradient(135deg, #f6f8f9, #e9eff2);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  flex: 1;
+  position: relative;
+  margin-left: 40px;
+  transition: all 0.3s ease;
+}
+
+.education-column .card {
+  margin-left: 40px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  border: 2px solid #0077b5;
+}
+
+.card-content {
+  padding: 1rem;
+  position: relative;
+}
+
+.card-header {
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: grey;
+  font-weight: 500;
+}
+
+.card-duration {
+  font-size: 0.75rem;
+  color: grey;
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
+.tech-stack {
+  margin-top: 1rem;
+}
+
+.tech {
+  display: inline-block;
+  background-color: #f0f0f0;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #0077b5;
+  transition: transform 0.3s ease-in-out;
+}
+
+.tech:hover {
+  animation: bounce 0.3s ease-in-out;
+}
+
+.read-more {
+  margin-top: 1rem;
+  background-color: transparent;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.875rem;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.experience-column::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  background-color: #e0e0e0;
+  top: 0;
+  bottom: 0;
+  left: 0; /* Adjusted position to be on the left side for experience */
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.education-column::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  background-color: #e0e0e0;
+  top: 0;
+  bottom: 24.5rem;
+  left: 0; 
+  border-radius: 5px;
+  z-index: 0;
+}
+
+/* Entrance Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Icon Animations */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Adjustments for Dark Mode */
+.night-mode .card {
+  background: linear-gradient(135deg, #2c2c2c, #1c1c1c);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.night-mode h2.experience-title, .night-mode h2.education-title,
+.night-mode .card-title {
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.night-mode .tech {
+  background-color: #3c3c3c;
+  color: #66b2ff;
+}
