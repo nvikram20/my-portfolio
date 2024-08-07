@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import "./Navbar.css";
 
 const Navbar = ({ scrollToSection, refs }) => {
-  const { homeRef, experienceRef, projectsRef, contactRef } = refs;
+  const { homeRef, experienceRef, projectsRef, skillsRef, contactRef } = refs;
 
   const [isNightMode, setIsNightMode] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -35,7 +38,7 @@ const Navbar = ({ scrollToSection, refs }) => {
   }, []);
 
   return (
-    <div className="navbar-container">
+    <div className={`navbar-container ${isNightMode ? 'night-mode' : ''}`}>
       <nav className="navbar">
         <div className="navbar-logo" onClick={() => scrollToSection(homeRef)}>
           Niharika Vikram
@@ -45,22 +48,17 @@ const Navbar = ({ scrollToSection, refs }) => {
             <li className="navbar-item" onClick={() => scrollToSection(homeRef)}>Home</li>
             <li className="navbar-item" onClick={() => scrollToSection(experienceRef)}>Experience</li>
             <li className="navbar-item" onClick={() => scrollToSection(projectsRef)}>Projects</li>
+            <li className="navbar-item" onClick={() => scrollToSection(skillsRef)}>Skills</li>
             <li className="navbar-item" onClick={() => scrollToSection(contactRef)}>Contact</li>
           </ul>
-          <div className="toggle-switch">
-            <input 
-              type="checkbox" 
-              id="nightModeToggle" 
-              checked={isNightMode}
-              onChange={toggleNightMode}
-            />
-            <label htmlFor="nightModeToggle" className="toggle-label"></label>
+          <div className="night-mode-toggle" onClick={toggleNightMode}>
+            <FontAwesomeIcon icon={isNightMode ? faSun : faMoon} />
           </div>
         </div>
       </nav>
       {isVisible && (
         <div className="scroll-to-top" onClick={scrollToTop}>
-          &#8679; {/* This is a unicode arrow icon */}
+          &#8679;
         </div>
       )}
     </div>

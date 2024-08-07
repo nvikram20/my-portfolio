@@ -5,7 +5,7 @@ body, html {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   height: 100%;
-  background-color: #FFFFFF; /* Set background to white */
+  background-color: white; /* Set background to white */
   color: #333; /* Adjusted to dark color for better readability against light background */
 }
 
