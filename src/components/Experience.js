@@ -78,7 +78,7 @@ const Experience = () => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
+          entry.target.classList.add('slide-in');
         }
       });
     }, { threshold: 0.1 });
@@ -86,6 +86,12 @@ const Experience = () => {
     items.forEach(item => {
       observer.observe(item);
     });
+
+    return () => {
+      items.forEach(item => {
+        observer.unobserve(item);
+      });
+    };
   }, []);
 
   return (

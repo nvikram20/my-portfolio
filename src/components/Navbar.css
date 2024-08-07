@@ -21,15 +21,17 @@ body, html {
   position: sticky;
   top: 0;
   z-index: 1000; /* Ensure navbar stays above other content */
-  background-color: white; /* Ensure background color is set */
+  background-color: rgba(255, 255, 255, 0.5); /* Transparent background */
+  backdrop-filter: blur(10px); /* Blur effect for content behind navbar */
 }
 
 .night-mode .navbar-container {
-  background-color: #121212; /* Background color for night mode */
+  background-color: rgba(18, 18, 18, 0.5); /* Transparent background for night mode */
+  backdrop-filter: blur(10px); /* Blur effect for content behind navbar in night mode */
 }
 
 .navbar {
-  height: 60px !important; 
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,15 +44,9 @@ body, html {
 .navbar-logo {
   display: flex;
   align-items: center; /* Center the logo vertically */
-}
-
-.navbar-logo-link {
   font-family: 'Newsreader', serif;
   font-size: 24px;
   color: green;
-  text-decoration: none;
-  margin-left: 0;
-  padding-left: 0;
   cursor: pointer;
 }
 
@@ -73,69 +69,14 @@ body, html {
   cursor: pointer;
 }
 
-.nav-link {
+.navbar-item a {
   text-decoration: none;
   color: black;
   font-size: 16px;
-  cursor: pointer;
 }
 
-.night-mode .nav-link {
+.night-mode .navbar-item a {
   color: #ffffff;
-}
-
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 25px;
-  margin-left: 10px;
-}
-
-.toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.toggle-label {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 25px;
-}
-
-.toggle-label:before {
-  position: absolute;
-  content: "";
-  height: 21px;
-  width: 21px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .toggle-label {
-  background-color: #2196F3;
-}
-
-input:checked + .toggle-label:before {
-  transform: translateX(24px);
-}
-
-.night-mode .toggle-label {
-  background-color: #66b2ff;
-}
-
-.night-mode .toggle-label:before {
-  background-color: #fff;
 }
 
 .scroll-to-top {
@@ -166,4 +107,51 @@ input:checked + .toggle-label:before {
 
 .night-mode .scroll-to-top:hover {
   background-color: #5599e6;
+}
+
+/* From Uiverse.io by Galahhad */ 
+.ui-switch {
+  --switch-bg: rgb(135, 150, 165);
+  --switch-width: 48px;
+  --switch-height: 24px; /* Adjusted to match the circle height */
+  --circle-diameter: 24px; /* Adjusted to fit the switch height */
+  --circle-bg: rgb(0, 56, 146);
+  --circle-inset: 0; /* No inset needed */
+  padding: 15px;
+}
+
+.ui-switch input {
+  display: none;
+}
+
+.slider {
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background: var(--switch-bg);
+  border-radius: var(--switch-height); /* Ensure full rounding */
+  position: relative;
+  cursor: pointer;
+}
+
+.slider .circle {
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  position: absolute;
+  background: var(--circle-bg);
+  border-radius: 50%; /* Ensure the circle is perfectly round */
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
+}
+
+
+.ui-switch input:active + .slider .circle::before {
+  transition: 0s;
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
+
+.night-mode-toggle{
+  padding: 10px;
 }

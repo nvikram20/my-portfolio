@@ -20,3 +20,40 @@
     color: #0077b5; /* LinkedIn blue as an example, change as needed */
   }
   
+
+  /* Add this to your CSS file */
+
+:root {
+  --social-icon-color: #333;
+  --social-icon-hover-color: #0077b5;
+  --social-icon-night-color: #ccc;
+  --social-icon-night-hover-color: #66b2ff;
+}
+
+.social-icons {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: var(--social-icon-color);
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--social-icon-hover-color); /* LinkedIn blue as an example, change as needed */
+}
+
+.night-mode .social-icons a {
+  color: var(--social-icon-night-color);
+}
+
+.night-mode .social-icons a:hover {
+  color: var(--social-icon-night-hover-color);
+}

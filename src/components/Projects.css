@@ -1,116 +1,115 @@
 /* General Styles */
 .projects-container {
-    padding: 4rem;
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    box-sizing: border-box;
-    min-height: 100vh; /* Ensure the container takes full viewport height */
-  }
-  
-  .project-card {
-    background-color: white;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin: 1rem;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    z-index: 0;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-    z-index: 1; /* Bring the hovered card to the front */
-  }
-  
-  .project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .project-content {
-    padding: 1rem;
-  }
-  
-  .project-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-  
-  .project-skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-  
-  .skill {
-    background-color: #f0f0f0;
-    color: #0077b5;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    margin: 0.25rem;
-    font-size: 0.875rem;
-  }
-  
-  .project-link {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: white;
-    border-radius: 50%;
-    padding: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .project-link a {
-    color: #0077b5;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .project-link a:hover {
-    color: #005f87;
-  }
-  
-  /* Night Mode Styles */
-  .night-mode .projects-container {
-    background-color: #121212;
-  }
-  
-  .night-mode .project-card {
-    background-color: #1e1e1e;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-  }
-  
-  .night-mode .project-title {
-    color: #ddd;
-  }
-  
-  .night-mode .skill {
-    background-color: #333;
-    color: #66b2ff;
-  }
-  
-  .night-mode .project-link {
-    background-color: #333;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-  }
-  
-  .night-mode .project-link a {
-    color: #66b2ff;
-  }
-  
-  .night-mode .project-link a:hover {
-    color: #5599e6;
-  }
-  
+  padding: 4rem;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  box-sizing: border-box;
+  min-height: 100vh; /* Ensure the container takes full viewport height */
+}
+
+.project-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 0;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1; /* Bring the hovered card to the front */
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.skill {
+  background-color: #f0f0f0;
+  color: #0077b5;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  margin: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.project-link {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-link a {
+  color: #0077b5;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.project-link a:hover {
+  color: #005f87;
+}
+
+/* Night Mode Styles */
+.night-mode .projects-container {
+  background-color: #121212;
+}
+
+.night-mode .project-card {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.night-mode .project-title {
+  color: #ddd;
+}
+
+.night-mode .skill {
+  background-color: #333;
+  color: #66b2ff;
+}
+
+.night-mode .project-link {
+  background-color: #333;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.night-mode .project-link a {
+  color: #66b2ff;
+}
+
+.night-mode .project-link a:hover {
+  color: #5599e6;
+}
